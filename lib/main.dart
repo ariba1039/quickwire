@@ -19,15 +19,13 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter  Chat App',
+          title: 'Chat App',
           theme: state is LightThemeStates
               ? AppThemes.lightTheme
-
-                :AppThemes.darkTheme,
+              : AppThemes.darkTheme,
           home: OnboardingScreen(),
         );
       },
     );
   }
 }
-
