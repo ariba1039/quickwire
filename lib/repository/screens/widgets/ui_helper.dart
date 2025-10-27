@@ -21,10 +21,10 @@ class UiHelper {
         fontWeight: fontWeight,
         fontFamily: fontFamily ?? "regular",
         color:
-            color ??
-            (Theme.of(context).brightness == Brightness.dark
-                ? AppColors.textLightmode
-                : AppColors.textDarkmode),
+            color ,
+            // (Theme.of(context).brightness == Brightness.dark
+            //     ? AppColors.textLightmode
+            //     : AppColors.textDarkmode),
       ),
     );
   }
