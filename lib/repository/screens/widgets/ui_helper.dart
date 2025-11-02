@@ -20,11 +20,10 @@ class UiHelper {
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontFamily: fontFamily ?? "regular",
-        color:
-            color ,
-            // (Theme.of(context).brightness == Brightness.dark
-            //     ? AppColors.textLightmode
-            //     : AppColors.textDarkmode),
+        color: color,
+        // (Theme.of(context).brightness == Brightness.dark
+        //     ? AppColors.textLightmode
+        //     : AppColors.textDarkmode),
       ),
     );
   }
@@ -55,6 +54,45 @@ class UiHelper {
             fontSize: fontSize ?? 16,
             fontWeight: fontWeight ?? FontWeight.normal,
             color: color ?? AppColors.scaffoldLight,
+          ),
+        ),
+      ),
+    );
+  }
+
+  static customTextField({
+    required TextEditingController controller,
+    required String hintText,
+    TextInputType? textinputtype,
+    bool obscureText = false,
+    required BuildContext context,
+  }) {
+    return Container(
+      height: 45,
+      width: 350,
+      decoration: BoxDecoration(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.textfielddarkmode
+            : AppColors.textfieldlightmode,
+        borderRadius: BorderRadius.circular(7),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10.0),
+        child: TextField(
+          controller: controller,
+          keyboardType: textinputtype,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            hintText: hintText,
+            border: InputBorder.none,
+            hintStyle: TextStyle(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.hintdarkmode
+                  : AppColors.hintlightmode,
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           ),
         ),
       ),

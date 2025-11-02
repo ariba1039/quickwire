@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: state is LightThemeStates
               ? AppThemes.lightTheme
               : AppThemes.darkTheme,
-          home: OnboardingScreen(),
+          home:  OnboardingScreen(),
         );
       },
     );

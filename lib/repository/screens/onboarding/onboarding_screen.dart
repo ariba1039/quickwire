@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickwire/domain/constants/app_colors.dart';
 import 'package:quickwire/domain/constants/cubits/theme_cubit.dart';
+import 'package:quickwire/repository/screens/login/login_screen.dart';
 import 'package:quickwire/repository/screens/widgets/ui_helper.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:quickwire/domain/constants/cubits/theme_cubit.dart';
@@ -12,16 +13,17 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
             ? AppColors.scaffoldDark
             : AppColors.scaffoldLight,
         actions: [
           IconButton(
-              onPressed: () {
-                BlocProvider.of<ThemeCubit>(context).toggleTheme();
-              },
-              icon: Icon(Icons.dark_mode))
+            onPressed: () {
+              BlocProvider.of<ThemeCubit>(context).toggleTheme();
+            },
+            icon: Icon(Icons.dark_mode),
+          ),
         ],
       ),
       body: Center(
@@ -33,8 +35,9 @@ class OnboardingScreen extends StatelessWidget {
             UiHelper.customText(
               text: "Connect instantly with ",
               fontSize: 24,
-              fontFamily: "bold",
               fontWeight: FontWeight.bold,
+              fontFamily: "bold",
+
               context: context,
             ),
             UiHelper.customText(
@@ -53,15 +56,17 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ],
         ),
-        
       ),
       floatingActionButton: UiHelper.customButton(
-        
-          onPressed: () {
-           
-          }, text: 'Start Messaging'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginScreen()),
+          );
+        },
+        text: 'Start Messaging',
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    
     );
   }
 }
