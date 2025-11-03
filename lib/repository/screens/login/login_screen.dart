@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quickwire/repository/screens/otp/otp_screen.dart';
 import 'package:quickwire/repository/screens/widgets/ui_helper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -8,6 +10,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(leading: Icon(CupertinoIcons.back),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,6 +51,7 @@ class LoginScreen extends StatelessWidget {
         text: "Continue",
         onPressed: () {
           // Navigate to OTP Screen
+          Navigator.push(context, MaterialPageRoute(builder: (context) => OtpScreen()));
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
