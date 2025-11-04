@@ -90,7 +90,8 @@ class UiHelper {
                   ? AppColors.hintdarkmode
                   : AppColors.hintlightmode,
               fontSize: 14,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
+              fontFamily: "bold",
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           ),

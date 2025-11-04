@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quickwire/domain/constants/app_colors.dart';
 import 'package:quickwire/repository/screens/otp/otp_screen.dart';
 import 'package:quickwire/repository/screens/widgets/ui_helper.dart';
 
@@ -10,7 +11,12 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: Icon(CupertinoIcons.back),),
+      appBar: AppBar(
+        leading: Icon(CupertinoIcons.back),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.scaffoldDark
+            : AppColors.scaffoldLight,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -51,7 +57,10 @@ class LoginScreen extends StatelessWidget {
         text: "Continue",
         onPressed: () {
           // Navigate to OTP Screen
-          Navigator.push(context, MaterialPageRoute(builder: (context) => OtpScreen()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => OtpScreen()),
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
