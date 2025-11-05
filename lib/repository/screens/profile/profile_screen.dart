@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quickwire/domain/constants/app_colors.dart';
+import 'package:quickwire/repository/screens/bottomnav/bottomnav_screen.dart';
 import 'package:quickwire/repository/screens/widgets/ui_helper.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -13,6 +14,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: UiHelper.customText(
           text: "Your Profile",
           fontSize: 18,
@@ -60,7 +62,12 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: UiHelper.customButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => BottomNavScreen()),
+          );
+        },
         text: 'Save',
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

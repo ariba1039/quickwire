@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
               ? AppThemes.lightTheme
               : AppThemes.darkTheme,
           home:  OnboardingScreen(),
+          
         );
       },
     );
