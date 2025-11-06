@@ -66,6 +66,7 @@ class UiHelper {
     TextInputType? textinputtype,
     bool obscureText = false,
     required BuildContext context,
+    required IconData? icondata,
   }) {
     return Container(
       height: 45,
@@ -76,25 +77,23 @@ class UiHelper {
             : AppColors.textfieldlightmode,
         borderRadius: BorderRadius.circular(7),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10.0),
-        child: TextField(
-          controller: controller,
-          keyboardType: textinputtype,
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            hintText: hintText,
-            border: InputBorder.none,
-            hintStyle: TextStyle(
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? AppColors.hintdarkmode
-                  : AppColors.hintlightmode,
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              fontFamily: "bold",
-            ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: TextField(
+        controller: controller,
+        keyboardType: textinputtype,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: hintText,
+          prefixIcon: Icon(icondata, color: AppColors.iconlight),
+          border: InputBorder.none,
+          hintStyle: TextStyle(
+            color: Theme.of(context).brightness == Brightness.dark
+                ? AppColors.hintdarkmode
+                : AppColors.hintlightmode,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            fontFamily: "bold",
           ),
+          contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         ),
       ),
     );

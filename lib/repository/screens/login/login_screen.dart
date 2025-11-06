@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
             UiHelper.customTextField(
               controller: phoneController,
               hintText: "+92",
-
+              icondata: Icons.phone,
               textinputtype: TextInputType.number,
               context: context,
             ),

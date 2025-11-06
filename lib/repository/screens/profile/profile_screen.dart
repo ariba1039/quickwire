@@ -44,6 +44,7 @@ class ProfileScreen extends StatelessWidget {
 
             SizedBox(height: 30),
             UiHelper.customTextField(
+              icondata: Icons.person,
               controller: firstnameController,
               hintText: "First Name",
               context: context,
@@ -52,6 +53,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             UiHelper.customTextField(
+              icondata: Icons.person,
               controller: lastnameController,
               hintText: "Last Name",
               textinputtype: TextInputType.name,
